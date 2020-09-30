@@ -1,0 +1,10 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
+import CONFIG from './config';
+
+const API_ENDPOINT = {
+    LIST: `${CONFIG.BASE_URL}/list`,
+    DETAIL: (id) => `${CONFIG.BASE_URL}/detail/:${id}`,
+};
+
+export default API_ENDPOINT;

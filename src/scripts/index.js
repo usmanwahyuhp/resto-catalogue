@@ -1,17 +1,17 @@
-import "regenerator-runtime"; /* for async await transpile */
-// import "../styles/main.css";
-import "../scripts/data";
-import "../styles/global";
+import 'regenerator-runtime'; /* for async await transpile */
+import App from './view/app';
+import '../styles/global.scss';
 
-console.log("Hello Coders! :)");
-
-$("#search-icon").click(function () {
-  $(".nav").toggleClass("search");
-  $(".nav").toggleClass("no-search");
-  $(".search-input").toggleClass("search-active");
+const app = new App({
+  button: document.querySelector('#mobile-menu'),
+  drawer: document.querySelector('.nav'),
+  content: document.querySelector('#maincontent'),
 });
 
-$(".menu-toggle").click(function () {
-  $(".nav").toggleClass("mobile-nav");
-  $(this).toggleClass("is-active");
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
 });
