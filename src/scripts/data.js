@@ -1,9 +1,4 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable indent */
 import data from '../DATA.json';
-
-// console.log('data');
-// console.log(data.restaurants[0]);
 
 let Card = '';
 

@@ -1,14 +1,27 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable indent */
+import FavoriteMovieIdb from '../../data/favouriteresto-idb';
+import { createRestaurantItemTemplate } from '../templates/template-creator';
 
 const Favourite = {
     async render() {
         return `
-            <h2>Favourite</h2>
+        <div class="main">
+            <h1>Restaurant Favourite</h1>
+            <ul class="cards">
+            </ul>
+        </div>
         `;
     },
     async afterRender() {
-        // akan dipanggil setelah render
+        const listsContainer = document.querySelector('.cards');
+        const movies = await FavoriteMovieIdb.getAllMovies();
+        try {
+            movies.forEach((list) => {
+                listsContainer.innerHTML += createRestaurantItemTemplate(list);
+            });
+        } catch (err) {
+            // eslint-disable-next-line no-console
+            console.log(err);
+        }
     },
 };
 

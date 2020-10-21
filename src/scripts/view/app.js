@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-parser';
@@ -8,10 +6,13 @@ import routes from '../routes/routes';
 console.log('App');
 
 class App {
-  constructor({ button, drawer, content }) {
+  constructor({
+    button, drawer, content, close,
+  }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
+    this._close = close;
 
     this._initialAppShell();
   }
@@ -21,6 +22,7 @@ class App {
       button: this._button,
       drawer: this._drawer,
       content: this._content,
+      close: this._close,
     });
   }
 

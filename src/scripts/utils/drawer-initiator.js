@@ -1,14 +1,12 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 console.log('drawer');
 const DrawerInitiator = {
-  init({ button, drawer, content }) {
+  init({ button, drawer, close }) {
     button.addEventListener('click', (event) => {
       this._toggleDrawer(event, drawer);
     });
 
-    content.addEventListener('click', (event) => {
+    close.addEventListener('click', (event) => {
       this._closeDrawer(event, drawer);
     });
   },

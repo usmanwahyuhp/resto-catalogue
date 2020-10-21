@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable indent */
 import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantSource {
